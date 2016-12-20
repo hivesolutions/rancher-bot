@@ -43,5 +43,18 @@ import rancher
 
 class AdapterController(appier.Controller):
 
+    def ensure_key(self, data = None):
+        data = data or appier.request_json()
+        key = data.get("key", None)
+        key = self.field("key", key)
+        key = self.request.get_header("X-Rancher-Key", key)
+        expected = appier.conf("RANCHER_KEY", None)
+        if not expected: return
+        if key == expected: return
+        raise appier.SecurityError(
+            message = "Mismatch rancher key"
+        )
+
     def get_api(self):
-        pass
+        api = rancher.Api()
+        return api
