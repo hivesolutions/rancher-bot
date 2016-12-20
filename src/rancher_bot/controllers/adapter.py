@@ -39,10 +39,9 @@ __license__ = "Apache License, Version 2.0"
 
 import appier
 
-from . import adapter
+import rancher
 
-class ServiceController(adapter.AdapterController):
+class AdapterController(appier.Controller):
 
-    @appier.route("/services/<str:id>/redeploy", ("GET", "POST"))
-    def redeploy(self, format):
+    def get_api(self):
         pass
