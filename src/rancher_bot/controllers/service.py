@@ -39,15 +39,8 @@ __license__ = "Apache License, Version 2.0"
 
 import appier
 
-class RancherBotApp(appier.APIApp):
+class ServiceController(appier.Controller):
 
-    def __init__(self, *args, **kwargs):
-        appier.APIApp.__init__(
-            self,
-            name = "rancher_bot",
-            *args, **kwargs
-        )
-
-if __name__ == "__main__":
-    app = RancherBotApp()
-    app.serve()
+    @appier.route("/services/<str:id>/redeploy", ("GET", "POST"))
+    def redeploy(self, format):
+        pass
