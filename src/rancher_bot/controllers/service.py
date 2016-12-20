@@ -43,6 +43,13 @@ from . import adapter
 
 class ServiceController(adapter.AdapterController):
 
+    @appier.route("/services/<str:id>", "GET")
+    def show(self, id):
+        self.ensure_key()
+        api = self.get_api()
+        service = api.get_service(id)
+        return service
+
     @appier.route("/services/<str:id>/redeploy", ("GET", "POST"))
     def redeploy(self, id):
         self.ensure_key()
