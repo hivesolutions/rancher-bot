@@ -3,6 +3,7 @@
 	<name>rancher_bot</name>
 	<comment></comment>
 	<projects>
+		<project>rancher_api</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
