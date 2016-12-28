@@ -51,3 +51,5 @@ class RancherBotApp(appier.APIApp):
 if __name__ == "__main__":
     app = RancherBotApp()
     app.serve()
+else:
+    __path__ = []
