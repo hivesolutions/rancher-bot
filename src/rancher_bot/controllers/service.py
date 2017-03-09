@@ -45,6 +45,7 @@ class ServiceController(adapter.AdapterController):
 
     @appier.route("/services/<str:id>", "GET")
     def show(self, id):
+        id = self._resolve_id(id)
         self.ensure_key()
         api = self.get_api()
         service = api.get_service(id)
@@ -52,7 +53,16 @@ class ServiceController(adapter.AdapterController):
 
     @appier.route("/services/<str:id>/redeploy", ("GET", "POST"))
     def redeploy(self, id):
+        id = self._resolve_id(id)
         self.ensure_key()
         api = self.get_api()
         service = api.upgrade_service(id)
         return service
+
+    def _resolve_id(self, id):
+        resolve = self.field("resolve", True, cast = bool)
+        if not resolve: return id
+        api = self.get_api()
+        service = api.get_service_safe(id)
+        if not service: return id
+        return service.get("id", id)
