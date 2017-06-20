@@ -59,6 +59,14 @@ class ServiceController(adapter.AdapterController):
         service = api.upgrade_service(id)
         return service
 
+    @appier.route("/services/<str:id>/restart", ("GET", "POST"))
+    def restart(self, id):
+        id = self._resolve_id(id)
+        self.ensure_key()
+        api = self.get_api()
+        service = api.restart_service(id)
+        return service
+
     def _resolve_id(self, id):
         resolve = self.field("resolve", True, cast = bool)
         if not resolve: return id
