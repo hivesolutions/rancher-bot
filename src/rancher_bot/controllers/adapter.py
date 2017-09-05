@@ -56,5 +56,5 @@ class AdapterController(appier.Controller):
         )
 
     def get_api(self):
-        api = rancher.Api()
+        api = rancher.API()
         return api
