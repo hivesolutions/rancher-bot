@@ -68,9 +68,10 @@ class ServiceController(adapter.AdapterController):
         return service
 
     def _resolve_id(self, id):
+        stack = self.field("stack", None)
         resolve = self.field("resolve", True, cast = bool)
         if not resolve: return id
         api = self.get_api()
-        service = api.get_service_safe(id)
+        service = api.get_service_safe(id, stack = stack)
         if not service: return id
         return service.get("id", id)
