@@ -40,4 +40,4 @@ from . import main
 
 from .controllers import *
 from .models import *
-from .main import WebookApp
+from .main import RancherBotApp
