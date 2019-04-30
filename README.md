@@ -1,6 +1,6 @@
 # Rancher Bot
 
-Simple bot for Rancher automation.
+Simple bot for [Rancher](https://rancher.com) automation.
 
 ## Configuration
 
