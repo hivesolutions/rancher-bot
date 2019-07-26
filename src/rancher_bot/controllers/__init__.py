@@ -37,7 +37,9 @@ __license__ = "Apache License, Version 2.0"
 from . import adapter
 from . import base
 from . import service
+from . import workload
 
 from .adapter import AdapterController
 from .base import BaseController
 from .service import ServiceController
+from .workload import WorkloadController
