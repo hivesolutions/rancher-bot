@@ -44,7 +44,7 @@ class RancherBotApp(appier.APIApp):
     def __init__(self, *args, **kwargs):
         appier.APIApp.__init__(
             self,
-            name = "rancher_bot",
+            name = "rancher-bot",
             *args, **kwargs
         )
 

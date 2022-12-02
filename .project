@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>rancher_bot</name>
+	<name>rancher-bot</name>
 	<comment></comment>
 	<projects>
 		<project>appier</project>
-		<project>rancher_api</project>
+		<project>rancher-api</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
