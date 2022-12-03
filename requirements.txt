@@ -1,2 +1,2 @@
 appier
-rancher_api
+rancher-api
